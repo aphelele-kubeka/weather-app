@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="{% static 'weather/styles/base.css' %}">
+</head>
+<body>
+  <header id="main-header">
+    <nav><a href="/weather" id="main-logo">WeatherApp</a></a></nav>
+    <h1>Weather in your city</h1>
+</header>
+  <article>
+      {% if city_name %}
+      <p>
+      <h3>The weather in {{city_name}} is:</h3>
+      <div>Weather conditions: {{weather_code}}</div>
+      <div>Temperature: {{temp}} <sup>o</sup>C</div>
+      <div>Wind speed: {{wind_speed}} m/s</div>
+      <div>The type of precipitation: {{precipitation_type}}</div>
+      </p>
+      {% endif %}
+  </article>
+</body>
+</html>
