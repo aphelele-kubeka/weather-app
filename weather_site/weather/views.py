@@ -62,11 +62,11 @@ def editor(request):
             note.content = content
             note.save()
 
-            return redirect('weather/editor.html/?noteid=%i' % noteid)
+            return redirect('/?noteid=%i' % noteid)
         else:
                 note = Note.objects.create(title=title, content=content)
 
-                return redirect('weather/editor.html/?noteid=%i' % note.id)
+                return redirect('/?noteid=%i' % note.id)
 
     if noteid > 0:
         note = Note.objects.get(pk=noteid)
